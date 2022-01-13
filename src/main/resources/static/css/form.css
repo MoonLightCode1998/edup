@@ -4,10 +4,28 @@ legend {
 }
 input {
     border-radius: 5px;
+
 }
-label {
+.labelBlock {
     width: 100px;
     margin-right: 10px;
     float: left;
     text-align: right;
+}
+fieldset {
+    margin-top: 5px;
+}
+ul {
+    list-style-type: none;
+
+}
+li{
+    float: left;
+    margin-right: 10px;
+    width: 150px;
+    display: block;
+}
+input[type="submit"] {
+    float: right;
+    margin-top: 10px;
 }

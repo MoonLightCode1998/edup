@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>xxx - Rejestracja</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/registration.css}"/>
+</head>
+<body>
+<div id="container">
+    <form method="post" th:action="@{/register}">
+        <h3>Rejestracja</h3>
+        <fieldset>
+            <legend>Dane konta</legend>
+            <label class="labelBlock" for="email">email: </label>
+            <input id="email" type="email" name="email">
+            <label class="labelBlock" for="password">hasło: </label>
+            <input id="password" type="password" name="password">
+            <label class="labelBlock" for="passwordAgain">Powtórz hasło: </label>
+            <input id="passwordAgain" name="repeatPassword">
+        </fieldset>
+
+        <fieldset>
+            <legend>Dane personalne</legend>
+            <label class="labelBlock" for="name">Imię: </label>
+            <input id="name" type="text" name="name">
+            <label class="labelBlock" for="surname">Nazwisko: </label>
+            <input id="surname" type="text" name="surname">
+            <br/>
+            <label class="labelBlock" for="gender">Płeć: </label>
+            <input id="gender" type="radio" name="gender" value="male">Mężczyzna
+            <input type="radio" name="gender" value="female"> Kobieta
+        </fieldset>
+        <fieldset>
+            <legend>Adres</legend>
+            <label class="labelBlock" for="country">Kraj:</label>
+            <input id="country" type="text" name="country">
+            <label class="labelBlock" for="city">Miasto:</label>
+            <input id="city" type="text" name="city">
+            <label class="labelBlock" for="street">Ulica:</label>
+            <input id="street" type="text" name="street">
+            <label class="labelBlock" for="bNumber">Nr budynku:</label>
+            <input id="bNumber" type="text" name="bNumber">
+            <label class="labelBlock" for="localNumber">Nr lokalu</label>
+            <input id="localNumber" type="text" name="localNumber">
+        </fieldset>
+        <fieldset>
+            <legend>Zainteresowania</legend>
+            <label>Dziedziny: </label>
+            <ul>
+                <li th:each="hobby : ${hobbyList}">
+                    <input type="checkbox" name="hobby" th:value="${hobby}">
+                    <label th:text="${hobby}"></label>
+                </li>
+            </ul>
+
+
+        </fieldset>
+
+        <input type="submit" value="Zarejestruj">
+    </form>
+</div>
+</body>
+</html>
